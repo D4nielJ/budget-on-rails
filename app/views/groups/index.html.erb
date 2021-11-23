@@ -1,0 +1,10 @@
+<h1 class="text-center">Categories</h1>
+<h2 class="text-center">Total: <span><%= @total %></span></h2>
+
+<div>
+  <% @groups.each do |group| %>
+    <%= render 'group_card', group: group%>
+  <% end %>
+</div>
+
+<%= link_to 'New category', new_group_path %>
