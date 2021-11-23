@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :groups
   has_many :reports
+
+  validates_presence_of :first_name, :last_name
 end
