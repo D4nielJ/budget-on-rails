@@ -2,8 +2,13 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @groups = Group.all
+    @groups = current_user.groups
     @total = helpers.total_expenses_all
+  end
+
+  def show
+    @group = Group.find(params[:id])
+    @reports = @group.reports
   end
 
   def new
@@ -15,7 +20,7 @@ class GroupsController < ApplicationController
     group = user.groups.new(group_params)
 
     if group.save
-      flash[:notice] = 'Categorie added successfully'
+      flash[:notice] = 'Category added successfully'
       redirect_to groups_path
     else
       flash[:error] = group.errors.messages

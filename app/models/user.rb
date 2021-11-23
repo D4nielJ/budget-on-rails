@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :groups
-  has_many :reports
+  has_many :groups, dependent: :destroy
+  has_many :reports, foreign_key: 'author_id', dependent: :destroy
 
   validates_presence_of :first_name, :last_name
 end

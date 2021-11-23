@@ -1,0 +1,19 @@
+<%= form_with model: @report ||= Report.new do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Write the name here..."  %>
+  </div>
+
+  <% current_user.groups.each do |group| %>
+    <%= f.label group.name %>: 
+    <%= check_box_tag "groups[]", group.id %>
+  <% end %>
+
+  <div>
+    <%= f.label :amount %>
+    <%= f.text_field :amount, placeholder: "Write your amount here..."  %>
+  </div>
+
+  <%= hidden_field_tag :group_id, @group.id %>
+  <%= f.submit "Submit" %>
+<% end %>
