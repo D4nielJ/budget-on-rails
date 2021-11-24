@@ -12,7 +12,17 @@ module.exports = {
       sans: ['open sans', ...defaultTheme.fontFamily.sans],
       serif: [...defaultTheme.fontFamily.serif],
       mono: [...defaultTheme.fontFamily.mono],
+      gloria: ['Gloria Hallelujah', 'cursive'],
     },
+    container: (theme) => ({
+      center: true,
+      padding: {
+        default: theme('spacing.8'),
+        sm: theme('spacing.24'),
+        lg: theme('spacing.40'),
+        xl: theme('spacing.60'),
+      },
+    }),
     extend: {
       colors: {
         main: '#3778c2',
