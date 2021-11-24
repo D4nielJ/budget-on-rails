@@ -13,6 +13,7 @@ module.exports = {
       serif: [...defaultTheme.fontFamily.serif],
       mono: [...defaultTheme.fontFamily.mono],
       gloria: ['Gloria Hallelujah', 'cursive'],
+      lobster: ['Lobster', 'cursive'],
     },
     container: (theme) => ({
       center: true,

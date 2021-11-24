@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def index; end
+  def index
+    @navbar = false
+  end
 
-  def non_authorized; end
+  def non_authorized
+    @navbar = true
+  end
 
   def after_sign_in_path_for(_resource)
     groups_path

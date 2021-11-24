@@ -2,6 +2,9 @@ class ReportsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @navbar = true
+    @title = 'Report'
+    @previous_path = group_path(params[:group_id])
     @group = Group.find(params[:group_id])
     @report = Report.new
   end
