@@ -11,12 +11,14 @@
     <%= stylesheet_link_tag "application" %>
   </head>
 
-  <body class="h-screen bg-gray-100">
+  <body class="min-h-screen bg-gray-100 overflow-hidden">
     <%= render 'navbar' %>
     <div class="container">
-      <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <div class="max-h-[75vh] overflow-y-auto">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
