@@ -1,0 +1,19 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name),
+:html => { :class => "flex flex-col pt-4"}) do |f| %>
+  <div class="border-third border-t border-b border-opacity-20 mb-4">
+    <%= f.label :email, class: 'sr-only invisible' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+        placeholder: 'Email',
+        class: 'w-full border-none py-4' %>
+    <div class="mx-auto w-11/12 border-t border-third border-opacity-20"></div>
+    <%= f.label :password, class: 'sr-only invisible' %>
+    <%= f.password_field :password, autocomplete: "current-password",
+        placeholder: 'Password',
+        class: 'w-full border-none py-4' %>
+  </div>
+
+  <%= f.submit "Log in",
+    class: 'mx-auto w-5/6 bg-main text-center text-sm text-white p-4 uppercase rounded' %>
+<% end %>
+
+<%= render "devise/shared/links" %>
