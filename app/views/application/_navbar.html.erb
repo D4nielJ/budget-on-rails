@@ -1,7 +1,7 @@
 <% if @navbar %>
   <header class='relative min-h-[10vh]'>
-    <div class="bg-gradient-to-t from-black via-transparent to-transparent opacity-30 bg-blend-screen absolute inset-0"></div>
     <nav class="absolute inset-0 flex justify-center items-center px-4 pt-6 pb-4 bg-main text-white">
+      <div class="absolute bg-gradient-to-t from-black via-transparent to-transparent opacity-30 bg-blend-screen  inset-0"></div>
       <% if @previous_path %>
         <%= link_to @previous_path, class: "absolute left-4" do %>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
