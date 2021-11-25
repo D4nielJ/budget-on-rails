@@ -30,6 +30,18 @@ module.exports = {
         second: '#5fb523',
         third: '#434b54',
       },
+      animation: {
+        flash: 'flash 4s ease-in-out 1 forwards',
+      },
+      keyframes: {
+        flash: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+            opacity: '0',
+          },
+          '10%, 90%': { transform: 'translateY(320px)', opacity: '1' },
+        },
+      },
     },
   },
   plugins: [
