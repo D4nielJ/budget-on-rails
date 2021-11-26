@@ -3,6 +3,7 @@ class Group < ApplicationRecord
   has_and_belongs_to_many :reports
 
   validates_presence_of :name
+  validates :icon, presence: true, url: true
 
   def total_expenses
     total = 0
