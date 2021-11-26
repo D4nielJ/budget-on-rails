@@ -13,7 +13,8 @@ The Ruby on Rails capstone project is about a mobile web application where you c
 - Postgresql
 - Devise
 
-[Live Demo Link](https://boiling-everglades-91799.herokuapp.com/)
+### [Live Demo Link](https://boiling-everglades-91799.herokuapp.com/)
+### [Video documentation](https://drive.google.com/file/d/1AYfy_B0nUF25-RTyqHU1QlWLk3fhjXqE/view?usp=sharing)
 
 ## Getting Started
 
