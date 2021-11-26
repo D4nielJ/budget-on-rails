@@ -2,16 +2,24 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @navbar = true
+    @title = 'Categories'
     @groups = current_user.groups
-    @total = helpers.total_expenses_all
+    @total = helpers.total_expenses_all(current_user)
   end
 
   def show
     @group = Group.find(params[:id])
+    @navbar = true
+    @title = @group.name
+    @previous_path = groups_path
     @reports = @group.reports.order(created_at: :desc)
   end
 
   def new
+    @navbar = true
+    @title = 'Categories'
+    @previous_path = groups_path
     @group = Group.new
   end
 
@@ -24,7 +32,7 @@ class GroupsController < ApplicationController
       redirect_to groups_path
     else
       flash[:error] = group.errors.messages
-      render :new
+      redirect_to new_group_path
     end
   end
 

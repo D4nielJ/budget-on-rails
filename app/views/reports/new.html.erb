@@ -1,19 +1,33 @@
-<%= form_with model: @report ||= Report.new do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Write the name here..."  %>
+<%= form_with model: @report ||= Report.new,
+:html => { :class => "flex flex-col pt-4"}  do |f| %>
+  <div class="border-third border-t border-b border-opacity-20 mb-2">
+
+    <div>
+      <%= f.label :name, class: 'sr-only' %>
+      <%= f.text_field :name, placeholder: "Write the name here...",
+       class: 'w-full border-none py-4'  %>
+    </div>
+
+    <div class="mx-auto w-11/12 border-t border-third border-opacity-20"></div>
+
+    <div>
+      <%= f.label :amount, class: 'sr-only invisible' %>
+      <%= f.text_field :amount, placeholder: "Write your amount here...",
+       class: 'w-full border-none py-4'  %>
+    </div>
   </div>
 
-  <% current_user.groups.each do |group| %>
-    <%= f.label group.name %>: 
-    <%= check_box_tag "groups[]", group.id %>
-  <% end %>
-
-  <div>
-    <%= f.label :amount %>
-    <%= f.text_field :amount, placeholder: "Write your amount here..."  %>
+  <div class="grid grid-cols-2 px-2 mb-4">
+    <% current_user.groups.each do |group| %>
+      <div class="p-2">
+        <%= check_box_tag "groups[]", group.id %>
+        <%= f.label group.name %>
+      </div>
+    <% end %>
   </div>
 
   <%= hidden_field_tag :group_id, @group.id %>
-  <%= f.submit "Save" %>
+
+  <%= f.submit "Save",
+   class: 'mx-auto w-5/6 bg-main text-center text-sm text-white p-4 uppercase rounded' %>
 <% end %>

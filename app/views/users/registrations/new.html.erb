@@ -1,8 +1,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
 :html => { :class => "flex flex-col pt-4"}) do |f| %>
-
   <%= render "devise/shared/error_messages", resource: resource %>
-  
   <div class="border-third border-t border-b border-opacity-20 mb-4">
     <div class="field">
       <%= f.label :first_name, class: 'sr-only invisible' %>

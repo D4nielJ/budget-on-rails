@@ -1,10 +1,17 @@
-<h1 class="text-center">Categories</h1>
-<h2 class="text-center">Total: <span><%= @total %></span></h2>
+<section class="overflow-y-auto flex flex-col">
+  <h2 class="flex justify-between px-4 py-4 mb-4 shadow bg-white">
+    <span class="text-third text-opacity-80">Total expended: </span>
+    <span class="font-bold text-third">$<%= @total %></span>
+  </h2>
 
-<div>
-  <% @groups.each do |group| %>
-    <%= render 'group_card', group: group%>
-  <% end %>
+  <div class="flex flex-col gap-3 px-4">
+    <% @groups.each do |group| %>
+      <%= render 'group_card', group: group %>
+    <% end %>
+  </div>
+
+</section>
+<div class="absolute min-h-[10vh] flex bottom-0 inset-x-0 p-4 bg-second">
+  <%= link_to 'New category', new_group_path,
+    class: 'w-full text-center rounded border border-white p-4 uppercase text-white' %>
 </div>
-
-<%= link_to 'New category', new_group_path %>
