@@ -12,7 +12,6 @@ module.exports = {
       sans: ['open sans', ...defaultTheme.fontFamily.sans],
       serif: [...defaultTheme.fontFamily.serif],
       mono: [...defaultTheme.fontFamily.mono],
-      gloria: ['Gloria Hallelujah', 'cursive'],
       lobster: ['Lobster', 'cursive'],
     },
     container: (theme) => ({
