@@ -61,6 +61,10 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
+## Acknowledgements ⭐️
+
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
