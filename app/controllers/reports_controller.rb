@@ -10,13 +10,13 @@ class ReportsController < ApplicationController
   end
 
   def create
-    report = current_user.reports.create(report_params)
-    group = Group.find(params[:group_id])
-
     if params[:groups].nil?
       flash[:alert] = 'Please select categories before submitting a new report'
       return redirect_to group_path(group)
     end
+
+    report = current_user.reports.create(report_params)
+    group = Group.find(params[:group_id])
 
     params[:groups].each do |g|
       report.groups << Group.find(g)
