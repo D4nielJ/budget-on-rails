@@ -15,19 +15,19 @@ User.create!(
 )
 
 food = Group.create!(name: 'Food',
-                     icon: 'https://cdn-icons.flaticon.com/png/512/562/premium/562678.png?token=exp=1637953056~hmac=a71c47841abf96df216de38c9345a2d1',
+                     icon: 'https://www.svgrepo.com/show/366737/food.svg',
                      user_id: user_one.id)
 
 bills = Group.create!(name: 'Bills',
-                      icon: 'https://cdn-icons-png.flaticon.com/512/1611/1611154.png',
+                      icon: 'https://www.svgrepo.com/show/379813/bill.svg',
                       user_id: user_one.id)
 
 outing = Group.create!(name: 'Outing',
-                       icon: 'https://cdn-icons.flaticon.com/png/512/4488/premium/4488772.png?token=exp=1637952987~hmac=86d6c2a38b749410fc4f4c3b9242f4bc',
+                       icon: 'https://www.svgrepo.com/show/149678/picnic.svg',
                        user_id: user_one.id)
 
 travel = Group.create!(name: 'Travel',
-                       icon: 'https://cdn-icons.flaticon.com/png/512/870/premium/870092.png?token=exp=1637952940~hmac=2653091d4ee899e23d1debeec3b6d3e4',
+                       icon: 'https://www.svgrepo.com/show/67444/travel.svg',
                        user_id: user_one.id)
 
 burger = Report.create!(name: 'Burger', amount: 5, author_id: user_one.id)
