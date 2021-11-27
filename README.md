@@ -38,6 +38,7 @@ To get a local copy up and running follow these simple example steps.
 - Run `bundle install`
 - Run `rails assets:precompile`
 - Run `rails db:setup`
+- Run `rails server` or `rails s`
 
 ### Usage
 
