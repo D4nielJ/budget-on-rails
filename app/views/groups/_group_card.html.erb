@@ -1,0 +1,11 @@
+<%= link_to group_path(group) do %>
+  <div class="flex justify-between items-center bg-white p-2 shadow text-third">
+    <div class="flex items-center">
+      <div class="mr-2 text-second">
+        <img src="<%= image_url(group.icon) %>" alt="" class="h-14 w-14 p-2">
+      </div>
+      <h3 class="text-sm"><%= group.name %></h3>
+    </div>
+    <span class="font-bold">$<%= group.total_expenses %></span>
+  </div>
+<% end %>

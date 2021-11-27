@@ -8,9 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="min-h-screen bg-gray-100 overflow-hidden">
+    <%= render 'navbar' %>
+    <div class="container">
+      <div class="max-h-[75vh] overflow-y-hidden">
+        <%= yield %>
+        <%= render "flash_notifications" %>
+      </div>
+    </div>
   </body>
 </html>

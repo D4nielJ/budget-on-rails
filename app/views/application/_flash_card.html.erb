@@ -1,0 +1,16 @@
+<% styles = flash_notification_styles(type) %>
+
+<div class="relative max-w-max mr-0 <%= styles[:bg_color] %> pl-10 pr-12 py-5 rounded-xl mb-4 drop-shadow-lg shadow-lg animate-flash">
+  <p class="<%= styles[:text_color] %> flex items-center gap-4"><span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 <%= styles[:icon_color] %>" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <%= render inline: styles[:icon] %>
+      </svg>
+    </span>
+    <%= msg %>
+  </p>
+  <div class="absolute top-3 right-3 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </div>
+</div>

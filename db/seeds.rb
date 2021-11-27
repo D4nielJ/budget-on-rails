@@ -1,7 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+user_one = User.create!(
+  first_name: 'User',
+  last_name: 'Doe',
+  email: 'user@user.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+User.create!(
+  first_name: 'User',
+  last_name: 'Stewart',
+  email: 'user2@user.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
+food = Group.create!(name: 'Food',
+                     icon: 'https://www.svgrepo.com/show/366737/food.svg',
+                     user_id: user_one.id)
+
+bills = Group.create!(name: 'Bills',
+                      icon: 'https://www.svgrepo.com/show/379813/bill.svg',
+                      user_id: user_one.id)
+
+outing = Group.create!(name: 'Outing',
+                       icon: 'https://www.svgrepo.com/show/149678/picnic.svg',
+                       user_id: user_one.id)
+
+travel = Group.create!(name: 'Travel',
+                       icon: 'https://www.svgrepo.com/show/67444/travel.svg',
+                       user_id: user_one.id)
+
+burger = Report.create!(name: 'Burger', amount: 5, author_id: user_one.id)
+movie = Report.create!(name: 'Movie', amount: 10, author_id: user_one.id)
+internet = Report.create!(name: 'Internet', amount: 50, author_id: user_one.id)
+rent = Report.create!(name: 'Rent', amount: 200, author_id: user_one.id)
+jamaica = Report.create!(name: 'I went to Jamaica', amount: 10_000, author_id: user_one.id)
+
+food.reports << burger
+bills.reports << internet
+bills.reports << rent
+outing.reports << jamaica
+outing.reports << movie
+travel.reports << jamaica

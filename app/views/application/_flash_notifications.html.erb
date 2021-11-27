@@ -1,0 +1,17 @@
+<div class="fixed inset-x-0 sm:max-w-sm sm:right-10 sm:left-auto top-6 mx-8 transform -translate-y-80">
+  <div class="flex flex-col items-center sm:items-end">
+    <% flash.each do |type, msg| %>
+      <% if type == 'notice' %>
+        <%= render 'flash_card', type: type, msg: msg %>
+      <% end %>
+      <% if type == 'error' %>
+        <% flash[:error].each do |_k, v| %>
+          <%= render 'flash_card', type: type, msg: v.first %>
+        <% end %>
+      <% end %>
+      <% if type == 'alert' %>
+        <%= render 'flash_card', type: type, msg: msg %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

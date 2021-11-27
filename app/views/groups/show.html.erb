@@ -1,0 +1,17 @@
+<% redirect_unless_authorized(current_user, @group.user.id) %>
+
+<h2 class="flex justify-between px-4 py-4 mb-4 shadow bg-white">
+  <span class="text-third text-opacity-80">Total on <%= @group.name %>: </span>
+  <span class="font-bold text-third">$<%= @group.total_expenses %></span>
+</h2>
+
+<div class="flex flex-col gap-3 px-4">
+  <% @reports.each do |report| %>
+    <%= render 'report_card', report: report%>
+  <% end %>
+</div>
+
+<div class="absolute min-h-[10vh] flex bottom-0 inset-x-0 p-4 bg-second">
+  <%= link_to 'New Transaction', new_report_path(group_id: @group),
+  class: 'w-full text-center rounded border border-white p-4 uppercase text-white' %>
+</div>
