@@ -48,7 +48,7 @@ To get a local copy up and running follow these simple example steps.
 
 If you encounter any issues with webpacker, try to run `bundle exec rake webpacker:install`
 
-## Authors
+## Author
 
 👤 **Daniel Jaramillo**
 
