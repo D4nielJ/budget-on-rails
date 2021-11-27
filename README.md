@@ -36,6 +36,7 @@ To get a local copy up and running follow these simple example steps.
 - Clone this repo
 - Cd to folder
 - Run `bundle install`
+- Run `rails assets:precompile`
 - Run `rails db:setup`
 
 ### Usage
